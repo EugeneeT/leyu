@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Brand Colors  */
+:root {
+    --prime-color: #1450A3;
+    --accent-dark: #191D88;
+    --accent-light: #337CCF;
+}
+
+/* Style for mobile header */
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+
+}
+
+.nav-logo img {
+    width: 100px;
+}
+
+.nav-language-dropdown,
+.nav-member-button,
+.nav-shopping-cart {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Menu  */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+.toggle-nav {
+    display: none;
+}
+
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        z-index: 1000;
+        grid-area: 1/4;
+    }
+
+    .nav-menu.active {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        display: none;
+        padding: 60px 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        /* Taking half of the screen width */
+        height: 100vh;
+        /* Take full vertical space */
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ccc;
+        flex-direction: column;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-item {
+        font-weight: bold;
+        /* Make the items bold */
+        font-size: 1.2rem;
+        /* Increase the font size */
+        text-align: center;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .toggle-nav:checked~.nav-list {
+        display: grid;
+        grid-area: 14 / 1;
+    }
+
+    .nav-item-social-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+        grid-area: 13 span 2 / 1;
+    }
+
+    .toggle-language {
+        display: none;
+    }
+
+    .language-label {
+        /* ... Your existing styles ... */
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .toggle-language:checked+.language-label .dropdown-button {
+        color: #000;
+        display: flex;
+        /* Change the icon color when checkbox is checked */
+
+    }
+
+    .toggle-language:checked+.language-label+.dropdown-container {
+        /* Styles for dropdown content when checkbox is checked */
+        display: grid;
+        grid-area: 6 / 1;
+    }
+
+    .dropdown-container {
+        display: none;
+        padding: 60px 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        /* Taking half of the screen width */
+        height: auto;
+        /* Take full vertical space */
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ccc;
+        flex-direction: column;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .language-item {
+        font-weight: bold;
+        /* Make the items bold */
+        font-size: 1.2rem;
+        /* Increase the font size */
+        text-align: center;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }

@@ -24,31 +24,58 @@
 <body>
     <header>
         <nav class="nav-menu" aria-label="Main">
-            <ul class="nav-list">
-                <li class="nav-logo"><a href="" aria-current="page"><img src="/images/leyu.png"
-                            alt="LEYU logo with the 'L' shaped like a crochet hook, representing our store's branding and home navigation button"></a>
-                </li>
-                <li class="nav-item"><a href="">About Us</a></li>
-                <li class="nav-item"><a href="">Crochet</a></li>
-                <li class="nav-item"><a href="">Toy's</a></li>
-                <li class="nav-item"><a href="">Plush</a></li>
-                <li class="nav-item"><a href="">Collectibles</a></li>
-                <li class="nav-item"><a href="">Adult Toys</a></li>
-                <li class="nav-language-dropdown">
-                    <div class="language-dropdown">
-                        <button class="dropdown-button"><i class="fa-solid fa-earth-asia"></i></button>
-                        <div class="dropdown-item">
-                            <a href="#">English</a>
-                            <a href="#">Deutsch</a>
-                            <a href="#">Русский</a>
-                            <a href="#">Tiếng Việt</a>
-                            <!-- More language options as needed -->
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-member-button"><a href="#"><i class="fa-solid fa-robot"></i></a></li>
-                <li class="nav-shopping-cart"><a href="#"><i class="fa-solid fa-basket-shopping"></i></a></li>
-            </ul>
+            <div class="nav-logo"><a href="" aria-current="page"><img src="/images/leyu.png"
+                        alt="LEYU logo with the 'L' shaped like a crochet hook, representing our store's branding and home navigation button"></a>
+            </div>
+            <div class="nav-empty"></div>
+            <div class="nav-actions">
+                <input type="checkbox" id="toggle-nav" class="toggle-nav">
+                <label for="toggle-nav" class="hamburger">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </label>
+                <ul class="nav-list">
+                    <li class="nav-item desktop-item"><a href="">About Us</a></li>
+                    <li class="nav-item desktop-item"><a href="">Crochet</a></li>
+                    <li class="nav-item desktop-item"><a href="">Toy's</a></li>
+                    <li class="nav-item desktop-item"><a href="">Plush</a></li>
+                    <li class="nav-item desktop-item"><a href="">Collectibles</a></li>
+                    <li class="nav-item desktop-item"><a href="">Adult Toys</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+                    <li class="nav-item mobile-item"><a href="">link sample</a></li>
+
+                    <ul class="nav-item-social-container">
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                        <li class="nav-item social-nav-item"><a href="#" target="_blank">FB</a></li>
+                    </ul>
+
+                </ul>
+                <div class="nav-language-dropdown">
+                    <input type="checkbox" id="toggle-language" class="toggle-language">
+                    <label for="toggle-language" class="language-label">
+                        <i class="fa-solid fa-earth-asia"></i>
+                    </label>
+                    <ul class="dropdown-container">
+                        <li class="language-item">English</li>
+                        <li class="language-item">Deutsch</li>
+                        <li class="language-item">Русский</li>
+                        <li class="language-item">Tiếng Việt</li>
+                        <!-- More language options as needed -->
+                    </ul>
+                </div>
+                <div class="nav-member-button"><a href="#"><i class="fa-solid fa-robot"></i></a></div>
+                <div class="nav-shopping-cart"><a href="#"><i class="fa-solid fa-basket-shopping"></i></a></div>
+            </div>
+
         </nav>
     </header>
     <main>
@@ -202,12 +229,15 @@
         </section>
     </main>
     <footer>
-        <div class="social">
-            <a href="#" class="social-button" target="_blank">FB</a>
-            <a href="#" blank class="social-button" target="_blank">FB</a>
-            <a href="#" blank class="social-button" target="_blank">FB</a>
-            <a href="#" blank class="social-button" target="_blank">FB</a>
-            <a href="#" blank class="social-button" target="_blank">FB</a>
+        <div class="social-container">
+            <ul>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+                <li class="social-item"><a href="#" target="_blank">FB</a></li>
+            </ul>
         </div>
         <div class="links">
             <div class="link-container">
