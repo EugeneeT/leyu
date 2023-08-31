@@ -5,20 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="leyu: the hobby and toy store for people who love to play, have fun, or are serious collectors in search of hidden treasures.">
+    <!-- Change or add page description -->
+    <meta name="theme-color" content="#FF00FF">
 
     <title>leyu | Hobby & Toy Store</title>
 
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Fontawesome Kit  -->
     <script src="https://kit.fontawesome.com/56a384748c.js" crossorigin="anonymous"></script>
 
+    <!-- CSS Reset by Sanitize -->
     <link rel="stylesheet" href="https://cdn.skypack.dev/sanitize.css">
     <link rel="stylesheet" href="https://unpkg.com/sanitize.css/forms.css">
     <link rel="stylesheet" href="https://unpkg.com/sanitize.css/typography.css">
+
+    <!-- Own Stylesheet  -->
     <link rel="stylesheet" href="style.css">
 
-    <meta name="description"
-        content="leyu: the hobby and toy store for people who love to play, have fun, or are serious collectors in search of hidden treasures.">
-    <!-- TODO: Change page description -->
-    <meta name="theme-color" content="#FF00FF">
+
 </head>
 
 <body>
@@ -62,7 +71,7 @@
                 <div class="nav-language-dropdown">
                     <input type="checkbox" id="toggle-language" class="toggle-language">
                     <label for="toggle-language" class="language-label">
-                        <i class="fa-solid fa-earth-asia"></i>
+                        <i class="fa-solid fa-earth-asia fa-lg"></i>
                     </label>
                     <ul class="dropdown-container">
                         <li class="language-item">English</li>
@@ -72,39 +81,104 @@
                         <!-- More language options as needed -->
                     </ul>
                 </div>
-                <div class="nav-member-button"><a href="#"><i class="fa-solid fa-robot"></i></a></div>
-                <div class="nav-shopping-cart"><a href="#"><i class="fa-solid fa-basket-shopping"></i></a></div>
+                <div class="nav-member-button"><a href="#"><i class="fa-solid fa-robot fa-lg"
+                            style="color: #000000;"></i></a></div>
+                <div class="nav-shopping-cart"><a href="#"><i class="fa-solid fa-basket-shopping fa-lg"
+                            style="color: #000000;"></i></a></div>
             </div>
 
         </nav>
     </header>
     <main>
-        <section class="info-ticker">
-            <div class="info-ticker-container">
-                <marquee behavior="scroll" direction="left">
-                    <!-- The <marquee> tag in HTML is used to create scrolling text or image in a webpages. 
-                    It scrolls either from horizontally left to right or right to left, 
-                    or vertically top to bottom or bottom to top.  -->
-                    <p class="ticker-item">Lorem ipsum dolor sit amet.</p>
-                    <p class="ticker-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="ticker-item">Lorem, ipsum dolor.</p>
-                    <p class="ticker-item">Lorem ipsum dolor sit amet consectetur.</p>
-                </marquee>
+        <section class="announcement">
+            <div id="carouselExampleSlidesOnly" class="announcement-carousel carousel slide" data-ride="carousel">
+                <div class="announcement-carousel-inner carousel-inner">
+                    <div class="carousel-item active">
+                        <p class="announcement-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="announcement-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="announcement-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
         <section class="page-banner">
             <!-- Recommended IMG Size Hero Image	1280 x 720 pixels	16:9 -->
-            <div class="page-banner-container">
-                <div class="banner-item"><img src="/images/istockphoto-1187031547-1024x1024.jpg" alt=""></div>
-                <div class="banner-item"><img src="/images/istockphoto-1335568635-1024x1024.jpg" alt=""></div>
-                <div class="banner-item"><img src="/images/istockphoto-1388926588-1024x1024.jpg" alt=""></div>
-                <div class="banner-item"><img src="/images/istockphoto-183857873-1024x1024.jpg" alt=""></div>
-                <div class="banner-item"><img src="/images/istockphoto-184779843-1024x1024.jpg" alt=""></div>
+            <div id="carouselExampleCaptions" class="anner-carousel carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="banner-carousel-inner carousel-inner">
+                    <div class="banner-item carousel-item active">
+                        <div class="carousel-overlay">
+                            <button type="button" class="banner-button btn"><a href="#">SHOP NOW</a></button>
+                        </div>
+                        <a href="#">
+                            <img src="/images/Screenshot from 2023-08-31 15-02-21.png"
+                                class="banner-image d-block w-100" alt="...">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="banner-item carousel-item">
+                        <div class="carousel-overlay">
+                            <button type="button" class="banner-button btn"><a href="#">SHOP NOW</a></button>
+                        </div>
+                        <a href="#">
+                            <img src="/images/H3274073db15d4a6b88fd83a263c9c04d8.jpg" class="banner-image d-block w-100"
+                                alt="...">
+                        </a>
+
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
+                    <div class="banner-item carousel-item">
+                        <div class="carousel-overlay">
+                            <button type="button" class="banner-button btn"><a href="#">SHOP NOW</a></button>
+                        </div>
+                        <a href="#"><img src="/images/zrick-morty-crochet-01.jpg" class="banner-image d-block w-100"
+                                alt="..."></a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
+                    <div class="banner-item carousel-item">
+                        <div class="carousel-overlay">
+                            <button type="button" class="banner-button btn"><a href="#">SHOP NOW</a></button>
+                        </div>
+                        <a href="#"><img src="/images/Bigcannon06.jpg" class="banner-image d-block w-100" alt="..."></a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </section>
+
         <section class="short-bio">
             <div class="short-bio-container">
-                <p class="bio-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel voluptatum
+                <p class="bio-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel
+                    voluptatum
                     explicabo dolore aperiam et quibusdam labore soluta ex pariatur provident impedit sapiente optio
                     voluptatem officia, consequatur quia cumque ab?</p>
             </div>
@@ -290,6 +364,15 @@
         <p class="copyright">© 2023 leyu</p>
         <p class="copyright">UNN0RM4L-STUDIOS Web Design</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

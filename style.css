@@ -4,10 +4,25 @@
     padding: 0;
 }
 
+html {
+    font-size: 10px;
+}
+
 li,
 a {
     list-style: none;
     text-decoration: none;
+}
+
+main {
+    margin-top: 90px;
+    /* to make sure that the header doesn't hide any content  */
+}
+
+label {
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
 /* Brand Colors  */
@@ -15,6 +30,8 @@ a {
     --prime-color: #1450A3;
     --accent-dark: #191D88;
     --accent-light: #337CCF;
+    --text-on-white: #333;
+
 }
 
 /* Style for mobile header */
@@ -29,26 +46,22 @@ a {
     top: 0;
     left: 0;
     width: 100%;
+    height: ;
     z-index: 999;
 }
 
 .nav-actions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-
+    gap: 1.5rem;
+    justify-items: center;
 }
 
 .nav-logo img {
-    width: 100px;
+    width: 90px;
 }
 
-.nav-language-dropdown,
-.nav-member-button,
-.nav-shopping-cart {
-    display: flex;
-    align-items: center;
-}
+
 
 /* Hamburger Menu  */
 
@@ -59,23 +72,95 @@ a {
 }
 
 .menu-line {
-    width: 25px;
-    height: 3px;
+    width: 3rem;
+    height: 4px;
     background-color: #333;
-    margin: 3px 0;
+    margin: 2px 0;
 }
 
 .toggle-nav {
     display: none;
 }
 
+/* Announcement */
+.announcement {
+    background-color: var(--prime-color);
+    height: 4rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.announcement-carousel {
+    display: flex;
+}
+
+.announcement-carousel-inner {
+    text-align: center;
+}
+
+.announcement-item {
+    color: white;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Page Banner  */
+
+/* Short Bio Text  */
+
+.short-bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.short-bio-container {
+    text-align: center;
+    /* Center the text horizontally */
+    padding: 4rem;
+    /* Add some padding for spacing */
+}
+
+.bio-item {
+    font-family: noto;
+    font-size: 2rem;
+    /* Adjust font size */
+    line-height: 1.5;
+    /* Adjust line height for readability */
+    color: var(--text-on-white);
+    /* Adjust text color */
+}
+
 
 /* Media query for mobile view */
 @media (max-width: 768px) {
+
+    .nav-language-dropdown,
+    .nav-member-button,
+    .nav-shopping-cart,
     .hamburger {
         display: flex;
+        align-items: center;
+    }
+
+    .nav-member-button,
+    .nav-shopping-cart {
         z-index: 1000;
+        font-size: 1.5rem;
+    }
+
+    .language-label {
+        z-index: 1000;
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: flex;
         grid-area: 1/4;
+        align-self: flex-end;
+        z-index: 1000;
     }
 
     .nav-menu.active {
@@ -139,7 +224,6 @@ a {
     .language-label {
         /* ... Your existing styles ... */
         cursor: pointer;
-        z-index: 1000;
     }
 
     .toggle-language:checked+.language-label .dropdown-button {
@@ -168,9 +252,8 @@ a {
         overflow: hidden;
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid #ccc;
-        flex-direction: column;
-        z-index: 999;
         overflow-y: auto;
+        z-index: 1;
     }
 
     .language-item {
@@ -184,3 +267,51 @@ a {
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .nav-actions {
+        align-self: flex-end;
+        margin: 0 0 7px 0;
+    }
+
+    /* Banner Mobile Button  */
+    .page-banner {
+        width: 100vw;
+        height: 40vh;
+    }
+
+    .banner-item {
+        height: 40vh;
+    }
+
+    .banner-carousel-inner {
+        position: relative;
+    }
+
+    .carousel-overlay {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .carousel-overlay button {
+        z-index: 1;
+    }
+
+    .banner-button {
+        border: 2px solid var(--prime-color);
+        background-color: rgba(255, 255, 255, 0.8);
+        width: auto;
+
+    }
+
+    .banner-button a {
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        white-space: nowrap;
+        /* Prevent the link from wrapping to two lines */
+
+    }
+}
