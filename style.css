@@ -1,7 +1,29 @@
+/* Define fonts */
+@font-face {
+    font-family: Noto;
+    src: url('/fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Noto-Bold;
+    src: url('/fonts/Noto_Sans/NotoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Noto-Italic;
+    src: url('/fonts/Noto_Sans/NotoSans-Italic.ttf') format('truetype');
+}
+
+/* Reset styles */
 * {
     margin: 0;
     border: 0;
     padding: 0;
+}
+
+/* Base styles */
+body {
+    font-family: Noto;
 }
 
 html {
@@ -14,9 +36,12 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 main {
-    margin-top: 90px;
-    /* to make sure that the header doesn't hide any content  */
+    margin-top: 0;
 }
 
 label {
@@ -25,78 +50,29 @@ label {
     padding: 0;
 }
 
-/* Brand Colors  */
+/* Brand Colors */
 :root {
     --prime-color: #1450A3;
     --accent-dark: #191D88;
     --accent-light: #337CCF;
     --text-on-white: #333;
-
 }
 
-/* Style for mobile header */
-
-.nav-menu {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: ;
-    z-index: 999;
-}
-
-.nav-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-    justify-items: center;
-}
-
-.nav-logo img {
-    width: 90px;
-}
-
-
-
-/* Hamburger Menu  */
-
+/* Styles for the hamburger menu */
 .hamburger {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
+    /* Hide the hamburger menu on desktop */
 }
 
-.menu-line {
-    width: 3rem;
-    height: 4px;
-    background-color: #333;
-    margin: 2px 0;
-}
-
-.toggle-nav {
-    display: none;
-}
-
-/* Announcement */
+/* Styles for the announcement banner */
 .announcement {
     background-color: var(--prime-color);
+    /* Set the background color and height for the announcement banner */
     height: 4rem;
     width: 100vw;
     display: flex;
+    /* Center the content of the announcement banner */
     justify-content: center;
-}
-
-.announcement-carousel {
-    display: flex;
-}
-
-.announcement-carousel-inner {
-    text-align: center;
 }
 
 .announcement-item {
@@ -105,211 +81,277 @@ label {
     margin: 1rem 0;
 }
 
-/* Page Banner  */
-
-/* Short Bio Text  */
-
+/* Styles for the short bio text */
 .short-bio {
     display: flex;
+
     justify-content: center;
     align-items: center;
+    /* Center the short bio text horizontally and vertically */
     width: 100vw;
 }
 
+/* Container for short bio text */
 .short-bio-container {
     text-align: center;
-    /* Center the text horizontally */
     padding: 4rem;
-    /* Add some padding for spacing */
+    /* Center the text within the container and add padding for spacing */
 }
 
+/* Individual bio item styles */
 .bio-item {
-    font-family: noto;
     font-size: 2rem;
-    /* Adjust font size */
     line-height: 1.5;
-    /* Adjust line height for readability */
     color: var(--text-on-white);
-    /* Adjust text color */
+    /* Set the font size, line height, and text color for bio items */
 }
-
 
 /* Media query for mobile view */
 @media (max-width: 768px) {
 
+    /* Styles for the mobile header */
+    header {
+        height: 90px;
+        /* Define a fixed height for the header */
+    }
+
+    /* Styles for the mobile header logo */
+    .nav-logo img {
+        width: 90px;
+        /* Set a maximum width for the logo image */
+    }
+
+    /* Styles for the main navigation menu */
+    .nav-menu {
+        display: grid;
+        /* Create a grid layout for the menu with three columns */
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        /* Align items in the center vertically */
+        background-color: #f9f9f9;
+        padding: 10px 20px;
+        /* Add padding to the menu */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    /* Styles for navigation actions */
+    .nav-actions {
+        display: grid;
+        /* Create a grid layout for navigation actions with four columns */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        justify-items: center;
+        /* Center items horizontally */
+    }
+
+    /* Styles for language dropdown, member button, and shopping cart */
     .nav-language-dropdown,
     .nav-member-button,
     .nav-shopping-cart,
-    .hamburger {
+    .hamburger,
+    .language-label {
         display: flex;
-        align-items: center;
+        /* Display these elements as flex items on mobile */
+        z-index: 1000;
+        /* Set the z-index and font size for the buttons */
     }
 
+    /* Font Size for the member button, shopping cart, language label and hamburger icon*/
     .nav-member-button,
     .nav-shopping-cart {
-        z-index: 1000;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    .language-label {
-        z-index: 1000;
-        font-size: 1.5rem;
-    }
-
+    .language-label,
     .hamburger {
-        display: flex;
-        grid-area: 1/4;
-        align-self: flex-end;
-        z-index: 1000;
+        font-size: 1.5rem;
     }
 
+    /* Positioning for the hamburger icon */
+    .hamburger {
+        grid-area: 1/4;
+        /* Position the hamburger icon to the last space within the grid layout */
+    }
+
+    /* Styling for the Hamburger and language icon */
+    .hamburger .menu-icon .fa-xmark,
+    .language-label .language-icon .fa-xmark,
+    .toggle-nav,
+    .toggle-language {
+        display: none;
+        /* Hide the X icon and checkbox by default */
+    }
+
+    .toggle-nav:checked+.hamburger .menu-icon .fa-xmark,
+    .toggle-language:checked+.language-label .language-icon .fa-xmark {
+        display: inline-block;
+        /* Display the X icon when the checkbox is checked */
+    }
+
+    .toggle-nav:checked+.hamburger .menu-icon .fa-bars,
+    .toggle-language:checked+.language-label .language-icon .fa-earth-asia {
+        display: none;
+        /* Hide the hamburger and Globe icon when the checkbox is checked */
+    }
+
+    /* Styles for the active navigation menu */
     .nav-menu.active {
         flex-direction: row-reverse;
         align-items: flex-start;
+        /* Change the direction and alignment of the menu items when active */
     }
 
-    .nav-list {
+    /* Styles for the navigation list and dropdown container */
+    .nav-list,
+    .dropdown-container {
         display: none;
-        padding: 60px 0;
+        /* Hide the navigation list and dropdown container by default */
         position: fixed;
+        /* Positions the elements relative to the viewport */
         top: 0;
+        /* Aligns the elements to the top of the viewport */
         right: 0;
-        width: 50%;
+        /* Aligns the elements to the right edge of the viewport */
+        width: 60%;
         /* Taking half of the screen width */
-        height: 100vh;
-        /* Take full vertical space */
         overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.8);
+        /* This hides any content that overflows the defined width, so it won't be visible outside the specified area. */
+        background-color: rgba(255, 255, 255, 0.9);
         border: 1px solid #ccc;
-        flex-direction: column;
-        z-index: 999;
+        z-index: 998;
         overflow-y: auto;
-    }
-
-
-    .nav-list.active {
-        display: flex;
-    }
-
-    .nav-item {
-        font-weight: bold;
-        /* Make the items bold */
-        font-size: 1.2rem;
-        /* Increase the font size */
+        /* Enables vertical scrolling when content exceeds the height */
         text-align: center;
-        top: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        /* Centers the text content horizontally */
     }
 
     .toggle-nav:checked~.nav-list {
+        height: 100vh;
         display: grid;
-        grid-area: 14 / 1;
+        /* Toggles the navigation list visibility when the checkbox is checked */
+        grid-area: 17 / 1;
     }
 
+    .toggle-language:checked~.dropdown-container {
+        height: 50vh;
+        /* Adjusts the dropdown container height when the language checkbox is checked */
+        display: grid;
+        grid-area: 6 / 1;
+        align-content: center;
+    }
+
+    /* Styles for navigation links */
+    .nav-item a {
+        color: var(--accent-light);
+        font-weight: bold;
+        /* Applies bold font style */
+        font-size: 1.8rem;
+        /* Sets font size to 1.8rem */
+        text-transform: uppercase;
+        /* Converts text to uppercase */
+    }
+
+    .first-nav-item,
+    .last-nav-item {
+        height: 90px;
+        /* Adjusts the height of specific navigation items */
+    }
+
+    /* Styles for the second navigation item */
+    .second-nav-item {
+        grid-row: 2 / span 1;
+        /* Spans 1 row starting from row 2 */
+    }
+
+    /* Styles for the social navigation container */
     .nav-item-social-container {
         display: grid;
         grid-template-rows: repeat(2, 1fr);
+        /* Defines a grid with 2 rows of equal size */
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-top: 10px;
-        grid-area: 13 span 2 / 1;
+        /* Defines a grid with 3 columns of equal size */
+        grid-row: 15 / span 2;
+        /* Start at row 1 and span 2 rows */
+        padding: 0 0 2.5rem 0;
+        /* Adds padding to the container */
     }
 
-    .toggle-language {
-        display: none;
-    }
-
-    .language-label {
-        /* ... Your existing styles ... */
-        cursor: pointer;
-    }
-
-    .toggle-language:checked+.language-label .dropdown-button {
-        color: #000;
-        display: flex;
-        /* Change the icon color when checkbox is checked */
-
-    }
-
-    .toggle-language:checked+.language-label+.dropdown-container {
-        /* Styles for dropdown content when checkbox is checked */
-        display: grid;
-        grid-area: 6 / 1;
-    }
-
-    .dropdown-container {
-        display: none;
-        padding: 60px 0;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50%;
-        /* Taking half of the screen width */
-        height: auto;
-        /* Take full vertical space */
-        overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px solid #ccc;
-        overflow-y: auto;
-        z-index: 1;
-    }
-
+    /* Styles for language items */
     .language-item {
+        color: var(--accent-light);
         font-weight: bold;
-        /* Make the items bold */
-        font-size: 1.2rem;
-        /* Increase the font size */
-        text-align: center;
-        top: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        /* Applies bold font style */
+        font-size: 1.8rem;
+        /* Sets font size to 1.8rem */
+        text-transform: uppercase;
+        padding: 1rem 0;
+        /* Adds padding to the items */
     }
 
+    /* Styles for navigation actions */
     .nav-actions {
         align-self: flex-end;
-        margin: 0 0 7px 0;
+        /* Aligns the container to the flex-end of its parent */
+        margin: 0 0 0.7rem 0;
+        /* Sets margins */
     }
 
-    /* Banner Mobile Button  */
+    /* Styles for the page banner */
     .page-banner {
         width: 100vw;
         height: 40vh;
+        /* Set the width and height of the page banner */
     }
 
+    /* Styles for banner items */
     .banner-item {
         height: 40vh;
     }
 
+    /* Styles for the banner carousel inner container */
     .banner-carousel-inner {
         position: relative;
+        /* Defines a relative positioning context */
     }
 
+    /* Styles for the carousel overlay */
     .carousel-overlay {
         position: absolute;
+        /* Uses absolute positioning within a relative container */
         top: 85%;
+        /* Sets top position to 85% from the top of the parent */
         left: 50%;
+        /* Sets left position to 50% from the left of the parent */
         transform: translate(-50%, -50%);
-
+        /* Centers the element horizontally and vertically */
     }
 
+    /* Styles for carousel overlay buttons */
     .carousel-overlay button {
         z-index: 1;
+        /* Sets the stacking order of the element */
     }
 
+    /* Styles for banner buttons */
     .banner-button {
         border: 2px solid var(--prime-color);
         background-color: rgba(255, 255, 255, 0.8);
+        /* Sets a semi-transparent background color */
         width: auto;
+        /* Automatically adjusts the width */
 
     }
 
+    /* Styles for banner button links */
     .banner-button a {
         font-size: 2rem;
         font-weight: bold;
         text-decoration: none;
+        /* Removes text decoration (underline) */
         white-space: nowrap;
         /* Prevent the link from wrapping to two lines */
 
