@@ -84,7 +84,6 @@ label {
 /* Styles for the short bio text */
 .short-bio {
     display: flex;
-
     justify-content: center;
     align-items: center;
     /* Center the short bio text horizontally and vertically */
@@ -100,10 +99,136 @@ label {
 
 /* Individual bio item styles */
 .bio-item {
-    font-size: 2rem;
-    line-height: 1.5;
+    font: 2rem/1.5 Noto;
     color: var(--text-on-white);
     /* Set the font size, line height, and text color for bio items */
+}
+
+.new-arrivals,
+.advertisement-main {
+    width: 100vw;
+    padding: 2rem 0;
+}
+
+
+
+.new-arrivals-header,
+.brands,
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+    text-align: center;
+}
+
+.new-arrivals-header h2,
+.brands h2 {
+    font: bold 2.5rem/1.5 Noto;
+    color: var(--text-on-white);
+}
+
+.new-arrivals-btn-1 {
+    width: 30vw;
+    color: white;
+    font: bold 1rem/3 Noto;
+    text-align: center;
+    background-color: var(--prime-color);
+    border: 2px solid var(--prime-color);
+    border-radius: 0 0 3% 3%;
+    align-self: center;
+    margin: 2rem;
+}
+
+.new-arrivals-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 2.5rem 0;
+    padding: 0 2.5rem;
+}
+
+.card {
+    width: 35vw;
+    border: none;
+}
+
+.new-arrivals-card-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--prime-color);
+    border-top: none;
+    border-radius: 0 0 3% 3%;
+}
+
+.card-body-text {
+    margin: auto;
+    text-align: center;
+}
+
+.new-arrivals-card-body h4 {
+    color: var(--prime-color);
+    font: bold 1.5rem Noto;
+}
+
+.new-arrivals-card-body h5,
+h6 {
+    color: var(--accent-light);
+    font: bold 1rem Noto;
+}
+
+.new-arrivals-btn-2 {
+    width: 100%;
+    color: white;
+    font: bold 1rem/3 Noto;
+    text-align: center;
+    background-color: var(--prime-color);
+    border-radius: 0 0 3% 3% margin-top: auto;
+    /* This will push the button to the bottom */
+}
+
+.advertisement-main {
+    padding: 2.5rem 0;
+}
+
+.main-ad-container-1,
+.main-ad-container-4 {
+    width: 100%;
+    padding: 1rem 2.5rem;
+}
+
+.main-ad-img-1,
+.main-ad-img-4 {
+    width: 100%;
+}
+
+.main-ad-container-4 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.brands h2 {
+    padding: 2.5rem;
+}
+
+.brand-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2.5rem 0;
+    padding: 0 2.5rem;
+}
+
+.brand-list-logo {
+    width: 40%;
+}
+
+.newsletter {
+    height: 200px;
+    background-color: var(--accent-light);
 }
 
 /* Media query for mobile view */
