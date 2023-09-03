@@ -134,6 +134,7 @@ label {
     text-align: center;
     background-color: var(--prime-color);
     border: 2px solid var(--prime-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 3% 3%;
     align-self: center;
     margin: 2rem;
@@ -151,6 +152,7 @@ label {
 .card {
     width: 35vw;
     border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .new-arrivals-card-body {
@@ -167,6 +169,7 @@ label {
     margin: auto;
     text-align: center;
 }
+
 
 .new-arrivals-card-body h4 {
     color: var(--prime-color);
@@ -223,12 +226,99 @@ h6 {
 }
 
 .brand-list-logo {
-    width: 40%;
+    width: 100PX;
 }
 
 .newsletter {
-    height: 200px;
+    width: 100vw;
+    height: 240px;
     background-color: var(--accent-light);
+    color: white;
+}
+
+.newsletter-container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: auto;
+    font: 1.5rem/1.5 Noto;
+    text-align: center;
+}
+
+.newsletter-container h2 {
+    font: bold 2.5rem/1.5 Noto;
+    padding: 1rem 0;
+}
+
+.newsletter-text {
+    font: bold 1.5rem/1.5 Noto;
+    padding: 1rem 0;
+}
+
+.newsletter-form {
+    display: flex;
+    align-content: center;
+    padding: 1rem 0;
+}
+
+.newsletter-input {
+    width: 70%;
+    font: bold 1.5rem/1.5 Noto;
+    border: 2px solid var(--prime-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+
+    /* Remove the border when input is focused */
+    &:focus {
+        outline: none;
+        /* Remove the default focus outline */
+        border: 2px solid white;
+        /* Set border color */
+    }
+
+
+}
+
+.newsletter-input::placeholder {
+    color: white;
+    /* Change the placeholder text color */
+}
+
+.newsletter-btn {
+    width: 30%;
+    color: white;
+    font: bold 1.5rem/1.5 Noto;
+    text-align: center;
+    background-color: var(--prime-color);
+    border: 2px solid var(--prime-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 3% 3%;
+}
+
+.reviews {
+    width: 100vw;
+    padding: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.review-overview {
+    align-self: center;
+    padding: 2.5rem 0;
+}
+
+.reviews-image {
+    width: 200px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-carousel {
+    width: 200px;
+    align-self: center;
+    border: 2px solid var(--accent-dark);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Media query for mobile view */
@@ -274,15 +364,14 @@ h6 {
     }
 
     /* Styles for language dropdown, member button, and shopping cart */
-    .nav-language-dropdown,
+
     .nav-member-button,
     .nav-shopping-cart,
-    .hamburger,
-    .language-label {
-        display: flex;
-        /* Display these elements as flex items on mobile */
+    .menu-icon,
+    .language-icon {
+        position: relative;
         z-index: 1000;
-        /* Set the z-index and font size for the buttons */
+        /* Set the z-index for the buttons */
     }
 
     /* Font Size for the member button, shopping cart, language label and hamburger icon*/
@@ -298,6 +387,7 @@ h6 {
 
     /* Positioning for the hamburger icon */
     .hamburger {
+        display: grid;
         grid-area: 1/4;
         /* Position the hamburger icon to the last space within the grid layout */
     }
@@ -347,7 +437,6 @@ h6 {
         /* This hides any content that overflows the defined width, so it won't be visible outside the specified area. */
         background-color: rgba(255, 255, 255, 0.9);
         border: 1px solid #ccc;
-        z-index: 998;
         overflow-y: auto;
         /* Enables vertical scrolling when content exceeds the height */
         text-align: center;
@@ -480,5 +569,100 @@ h6 {
         white-space: nowrap;
         /* Prevent the link from wrapping to two lines */
 
+    }
+
+    /* Footer Mobile Style  */
+
+    .social-container {
+        display: none;
+    }
+
+    /* Collapsible styles */
+    .links {
+        padding: 2.5rem 0;
+    }
+
+    .link-container {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .collapsible {
+        font: bold 1.5rem/1.5 Noto;
+        color: var(--text-on-white);
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2.5rem;
+
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+        /* Smooth transition for the arrow */
+    }
+
+    /* Rotate the arrow icon when active */
+    .collapsible.active .arrow {
+        transform: rotateX(180deg);
+    }
+
+    .link-container ul {
+        max-height: 0;
+        /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        /* Smooth animation */
+    }
+
+    /* Styles for the hidden checkbox and label */
+    .toggle {
+        display: none;
+    }
+
+    /* Show the list when the checkbox is checked */
+    .toggle:checked+.link-list-shop,
+    .toggle:checked+.link-list-diy,
+    .toggle:checked+.link-list-about,
+    .toggle:checked+.link-list-info {
+        max-height: 500px;
+        /* Adjust this value based on your content height */
+    }
+
+    .link-list-about,
+    .link-list-diy,
+    .link-list-info,
+    .link-list-shop {
+        padding: 0 2.5rem;
+        font: bold 1.5rem/1.5 Noto;
+    }
+
+    .payment {
+        width: 100vw;
+        display: flex;
+        padding: 2.5rem 0;
+        justify-content: center;
+    }
+
+    .payment-list {
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .payment-icons {
+        padding: 1rem;
+    }
+
+    .payment-img {
+        width: 5rem;
+    }
+
+    .copyright {
+        text-align: center;
+        font: bold 1rem/1.5 Noto;
+        color: var(--text-on-white);
     }
 }
