@@ -494,6 +494,10 @@ h6 {
         /* Adds padding to the container */
     }
 
+    .fa-brands {
+        font-size: 3rem;
+    }
+
     /* Styles for language items */
     .language-item {
         color: var(--accent-light);
@@ -517,7 +521,6 @@ h6 {
     /* Styles for the page banner */
     .page-banner {
         width: 100vw;
-        height: 40vh;
         /* Set the width and height of the page banner */
     }
 
