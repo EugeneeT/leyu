@@ -2,6 +2,8 @@
 
 Welcome to leyu! This project is a Hobby and E-Commerce Website WebDev Project.
 
+** MOBILE VERSION ONLY ** at this stage 
+
 ## Table of Contents
 
 - [Overview](#overview)
