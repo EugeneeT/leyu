@@ -1,17 +1,17 @@
 /* Define fonts */
 @font-face {
     font-family: Noto;
-    src: url('/fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
+    src: url('./fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: Noto-Bold;
-    src: url('/fonts/Noto_Sans/NotoSans-Bold.ttf') format('truetype');
+    src: url('./fonts/Noto_Sans/NotoSans-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: Noto-Italic;
-    src: url('/fonts/Noto_Sans/NotoSans-Italic.ttf') format('truetype');
+    src: url('./fonts/Noto_Sans/NotoSans-Italic.ttf') format('truetype');
 }
 
 /* Reset styles */
